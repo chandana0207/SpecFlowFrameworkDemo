@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Report\**" />
+    <Compile Remove="TestResults\**" />
+    <EmbeddedResource Remove="Report\**" />
+    <EmbeddedResource Remove="TestResults\**" />
+    <None Remove="Report\**" />
+    <None Remove="TestResults\**" />
+    <SpecFlowFeatureFiles Remove="Report\**" />
+    <SpecFlowFeatureFiles Remove="TestResults\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Report\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="TestResults\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="AutoItX3Lib">
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>f8937e53-d444-4e71-9275-35b64210cc3b</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
+    <PackageReference Include="FluentAssertions" Version="6.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit.Console" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="97.0.4692.7100" />
+    <PackageReference Include="SpecFlow" Version="3.9.22" />
+    <PackageReference Include="SpecFlow.Assist.Dynamic" Version="1.4.2" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.9.22" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.22" />
+    <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ResultsScreenshot\" />
+  </ItemGroup>
+
+</Project>
